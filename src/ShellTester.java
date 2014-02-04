@@ -7,7 +7,7 @@ public class ShellTester {
 	static String workingDir;
 
 	public static void main(String[] args) {
-
+		
 		System.out.println("Welcome to SHELLa Good, a proof-of-concept Java "
 				+ "shell made by Josh Lieberman.");
 		// get working directory
@@ -101,6 +101,23 @@ public class ShellTester {
 			for (int i = 0; i < listOfFiles.length; i++) {
 
 				files = listOfFiles[i].getName();
+				
+				if (listOfFiles[i].isDirectory())  { // if file is directory
+					String newFolder = listOfFiles[i].toString();
+					// need to remove leading ./
+					if(newFolder.charAt(0) == '.' && newFolder.charAt(1) == '/') {
+						newFolder = newFolder.substring(2);
+						newFolder = newFolder + "/";
+						System.out.println(newFolder);
+					}
+//					System.out.println("folder:" + newFolder);
+//					newFolder.replace("./", "");
+					
+//					System.out.println(newFolder);
+//					if(!newFolder.equals(".//") || !newFolder.equals("..//"))
+//					newFolder.concat("/");
+//					System.out.println("folder: " + newFolder);
+				} else // normal file
 				System.out.println(files);
 			}
 		}
