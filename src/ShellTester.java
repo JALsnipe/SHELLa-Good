@@ -74,6 +74,10 @@ public class ShellTester {
 	private static void processCommand(String command) {
 		
 		if(command.contains("mkdir")) {
+			if(command.length() == 5) {
+				System.out.println("Usage: mkdir [new_dir]");
+			} else {
+				
 			String[] splitString = command.split("\\s+");
 			new File(workingDir +"/" + splitString[1]).mkdirs();
 			
@@ -81,6 +85,7 @@ public class ShellTester {
 //			for(int i = 0; i < splitString.length; i++) {
 //				System.out.println(splitString[i]);
 //			}
+			}
 		}
 
 		else if(command.equals("pwd")) {
@@ -123,7 +128,7 @@ public class ShellTester {
 			}
 		}
 		
-		if(command.equals("logout")) {
+		else if(command.equals("logout")) {
 			System.out.println("Sayonara, suckers!");
 			System.exit(0);
 		}
