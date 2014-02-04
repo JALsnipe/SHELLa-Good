@@ -11,6 +11,7 @@ Supported commands:
 ls
 pwd
 mkdir [new_dir]
+logout
 ```
 
 Example:
