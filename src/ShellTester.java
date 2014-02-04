@@ -66,7 +66,8 @@ public class ShellTester {
 		System.out.println("Supported commands: "
 				+ "ls, "
 				+ "pwd, "
-				+ "mkdir [new_dir]");
+				+ "mkdir [new_dir], "
+				+ "logout");
 		
 	}
 
@@ -120,6 +121,11 @@ public class ShellTester {
 				} else // normal file
 				System.out.println(files);
 			}
+		}
+		
+		if(command.equals("logout")) {
+			System.out.println("Sayonara, suckers!");
+			System.exit(0);
 		}
 		
 		else {
