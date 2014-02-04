@@ -7,9 +7,11 @@ Translators with Al Aho.
 Spring 2014
 
 Supported commands:
+```
 ls
 pwd
 mkdir [new_dir]
+```
 
 Example:
 ```
